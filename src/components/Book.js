@@ -1,22 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Book = ({ book }) => {
-  return (
-    <React.Fragment>
-      <tr>
-        <td>{book.id}</td>
-        <td>{book.title}</td>
-        <td>{book.category}</td>
-      </tr>
-    </React.Fragment>
-  );
-};
+const Book = ({ book }) => (
+  <>
+    <tr>
+      <td>{book.id}</td>
+      <td>{book.title}</td>
+      <td>{book.category}</td>
+    </tr>
+  </>
+);
 
 Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-}
+}.isRequired;
 
-export default Book
+export default Book;
