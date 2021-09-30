@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createBook } from "../actions/index";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createBook } from '../actions/index';
 
 const BooksForm = ({ createBooks }) => {
   const categories = [
-    "Action",
-    "Biography",
-    "History",
-    "Horror",
-    "Kids",
-    "Learning",
-    "Sci-Fi",
+    'Action',
+    'Biography',
+    'History',
+    'Horror',
+    'Kids',
+    'Learning',
+    'Sci-Fi',
   ];
-  const [state, setState] = useState({ title: "", category: "" });
+  const [state, setState] = useState({ title: '', category: '' });
   let error = false;
 
   const handleChange = ({ target: { name, value } }) => {
@@ -22,7 +22,7 @@ const BooksForm = ({ createBooks }) => {
   const { title, category } = state;
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (title === "" || category === "") {
+    if (title === '' || category === '') {
       error = true;
     } else {
       createBooks({
@@ -30,7 +30,7 @@ const BooksForm = ({ createBooks }) => {
         title,
         category,
       });
-      setState({ title: "", category: "" });
+      setState({ title: '', category: '' });
     }
     return error;
   };
@@ -46,7 +46,7 @@ const BooksForm = ({ createBooks }) => {
               type="text"
               id="book-title"
               onChange={handleChange}
-              value={state.title || ""}
+              value={state.title || ''}
             />
           </label>
         </div>
@@ -63,7 +63,7 @@ const BooksForm = ({ createBooks }) => {
           </label>
         </div>
         <input type="Submit" />
-        <h5>{error ? "Enter required fields" : ""}</h5>
+        <h5>{error ? 'Enter required fields' : ''}</h5>
       </form>
     </>
   );
