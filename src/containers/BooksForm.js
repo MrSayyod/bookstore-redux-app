@@ -30,25 +30,30 @@ const BooksForm = ({ createBook }) => {
         title,
         category,
       });
-      setState( { title: '', category: ''})
+      setState({ title: "", category: "" });
     }
-    return error
+    return error;
   };
-  
+
   return (
     <>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h3>Add book</h3>
         <div className="title-div">
           <label htmlFor="book-title">
             Title:
-            <input type="text" id="book-title" />
+            <input
+              type="text"
+              id="book-title"
+              onChange={handleChange}
+              value={state.title || ""}
+            />
           </label>
         </div>
         <div className="category-div">
           <label htmlFor="book-category">
             Category:
-            <select id="book-category">
+            <select id="book-category" onChange={handleChange}>
               {categories.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -58,9 +63,12 @@ const BooksForm = ({ createBook }) => {
           </label>
         </div>
         <input type="Submit" />
+        <h5>{error ? 'Enter required fields' : "" }</h5>
       </form>
     </>
   );
 };
+
+
 
 export default BooksForm;
