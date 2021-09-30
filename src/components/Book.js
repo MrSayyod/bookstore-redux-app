@@ -12,9 +12,9 @@ const Book = ({ book }) => (
 );
 
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  category: PropTypes.string,
 }.isRequired;
 
 export default Book;
