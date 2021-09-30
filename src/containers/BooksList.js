@@ -27,10 +27,4 @@ const mapStateToProps = (state) => ({
   books: state.booksReducer.books,
 });
 
-// const mapStateToProps = (state) => {
-//   const { book } = state;
-//   console.log(state);
-//   return { books: book.booksReducer.books };
-// };
-
 export default connect(mapStateToProps, null)(BooksList);
