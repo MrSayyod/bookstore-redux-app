@@ -20,6 +20,20 @@ const BooksForm = ({ createBook }) => {
     setState({ ...state, [name]: value });
   };
   const { title, category } = state;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (title === "" || category === "") {
+      error = true;
+    } else {
+      createBook({
+        id: Math.round(Math.random() * 100) + 1,
+        title,
+        category,
+      });
+      setState( { title: '', category: ''})
+    }
+    return error
+  };
   
   return (
     <>
