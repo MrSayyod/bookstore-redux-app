@@ -69,6 +69,9 @@ const BooksForm = ({ createBook }) => {
   );
 };
 
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+}
 
 
 export default BooksForm;
