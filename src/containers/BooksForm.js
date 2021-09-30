@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
-
-const BooksForm = () => {
+const BooksForm = ({ createBook }) => {
   const categories = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
+    "Action",
+    "Biography",
+    "History",
+    "Horror",
+    "Kids",
+    "Learning",
+    "Sci-Fi",
   ];
+  const [state, setState] = useState({ title: "", category: "" });
+  let error = false;
 
+  const handleChange = ({ target: { name, value } }) => {
+    setState({ ...state, [name]: value });
+  };
+  const { title, category } = state;
+  
   return (
     <>
       <form className="form">
