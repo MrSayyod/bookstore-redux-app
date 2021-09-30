@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
-const BooksForm = ({ createBook }) => {
+const BooksForm = ({ createBooks }) => {
   const categories = [
     "Action",
     "Biography",
@@ -25,7 +25,7 @@ const BooksForm = ({ createBook }) => {
     if (title === "" || category === "") {
       error = true;
     } else {
-      createBook({
+      createBooks({
         id: Math.round(Math.random() * 100) + 1,
         title,
         category,
@@ -63,15 +63,18 @@ const BooksForm = ({ createBook }) => {
           </label>
         </div>
         <input type="Submit" />
-        <h5>{error ? 'Enter required fields' : "" }</h5>
+        <h5>{error ? "Enter required fields" : ""}</h5>
       </form>
     </>
   );
 };
 
 BooksForm.propTypes = {
-  createBook: PropTypes.func.isRequired,
-}
+  createBooks: PropTypes.func.isRequired,
+};
 
+const mapDispatchToProps = (dispatch) => ({
+  createBooks: (book) => dispatch(createBook(book)),
+});
 
-export default BooksForm;
+export default connect(null, mapDispatchToProps)(BooksForm);
