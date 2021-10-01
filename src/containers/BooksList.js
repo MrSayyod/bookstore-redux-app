@@ -5,10 +5,11 @@ import Book from '../components/Book';
 import { actionRemoveBook, actionChangeFilter } from '../actions/index';
 import { CategoryFilter } from '../components/CategoryFilter';
 
-const BooksList = ({ books, removeBook }) => {
+const BooksList = ({ books, removeBook, filter, changeFilter }) => {
   const handleRemoveBook = (book) => {
     removeBook(book);
   };
+  const handleFilterChange = (event) => changeFilter(event.target.value)
   const data = books.map((item) => (
     <Book
       key={item.id}
