@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createBook } from '../actions/index';
+import { actionCreateBook } from '../actions/index';
 
-const BooksForm = ({ createBooks }) => {
+const BooksForm = ({ createBook }) => {
   const categories = [
     'Action',
     'Biography',
@@ -25,7 +25,7 @@ const BooksForm = ({ createBooks }) => {
     if (title === '' || category === '') {
       error = true;
     } else {
-      createBooks({
+      createBook({
         id: Math.round(Math.random() * 100) + 1,
         title,
         category,
@@ -70,11 +70,11 @@ const BooksForm = ({ createBooks }) => {
 };
 
 BooksForm.propTypes = {
-  createBooks: PropTypes.func.isRequired,
+  createBook: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  createBooks: (book) => dispatch(createBook(book)),
+  createBook: (book) => dispatch(actionCreateBook(book)),
 });
 
 export default connect(null, mapDispatchToProps)(BooksForm);
