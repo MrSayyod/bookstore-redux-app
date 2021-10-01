@@ -34,6 +34,7 @@ const initialState = {
 
 const rootReducer = combineReducers({
   books: booksReducer,
+  filter: filterReducer,
 });
 const store = createStore(rootReducer, initialState);
 
