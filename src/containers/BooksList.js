@@ -50,6 +50,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   removeBook: (book) => dispatch(actionRemoveBook(book)),
+  changeFilter: (filter) => dispatch(actionChangeFilter(filter)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
