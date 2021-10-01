@@ -13,15 +13,15 @@ const BooksForm = ({ createBook }) => {
     'Learning',
     'Sci-Fi',
   ];
-  const [state, setState] = useState({ title: '', category: '' });
+  const [state, setState] = useState({ title: '', category: 'Action' });
   let error = false;
 
   const handleChange = ({ target: { name, value } }) => {
     setState({ ...state, [name]: value });
   };
-  const { title, category } = state;
   const handleSubmit = (event) => {
     event.preventDefault();
+    const { title, category } = state;
     if (title === '' || category === '') {
       error = true;
     } else {
@@ -30,7 +30,7 @@ const BooksForm = ({ createBook }) => {
         title,
         category,
       });
-      setState({ title: '', category: '' });
+      setState({ title: '', category: 'Action' });
     }
     return error;
   };
