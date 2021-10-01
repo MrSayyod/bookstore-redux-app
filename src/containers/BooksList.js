@@ -10,7 +10,8 @@ const BooksList = ({ books, removeBook, filter, changeFilter }) => {
     removeBook(book);
   };
   const handleFilterChange = (event) => changeFilter(event.target.value)
-  const data = books.map((item) => (
+  const filteredBooks = filter === "ALL" ? books : books.filter((item) => item.category === filter)
+  const data = filteredBooks.map((item) => (
     <Book
       key={item.id}
       book={item}
@@ -18,6 +19,8 @@ const BooksList = ({ books, removeBook, filter, changeFilter }) => {
     />
   ));
   return (
+    <>
+    <CategoryFilter handleFilterChange={handleFilterChange} />
     <table className="books-table">
       <thead>
         <tr>
@@ -29,12 +32,15 @@ const BooksList = ({ books, removeBook, filter, changeFilter }) => {
       </thead>
       <tbody>{data}</tbody>
     </table>
+    </>
   );
 };
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeBook: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  changeFilter: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
