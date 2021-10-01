@@ -45,6 +45,7 @@ const BooksForm = ({ createBook }) => {
             <input
               type="text"
               id="book-title"
+              name="title"
               onChange={handleChange}
               value={state.title || ''}
             />
@@ -53,7 +54,7 @@ const BooksForm = ({ createBook }) => {
         <div className="category-div">
           <label htmlFor="book-category">
             Category:
-            <select id="book-category" onChange={handleChange}>
+            <select id="book-category" onChange={handleChange} name="category">
               {categories.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -62,7 +63,7 @@ const BooksForm = ({ createBook }) => {
             </select>
           </label>
         </div>
-        <input type="Submit" />
+        <button type="submit">Submit</button>
         <h5>{error ? 'Enter required fields' : ''}</h5>
       </form>
     </>
