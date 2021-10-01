@@ -1,6 +1,6 @@
-import { CHANGE_FILTER } from "../actions/index";
+import { CHANGE_FILTER } from '../actions/index';
 
-const filterReducer = (state = "ALL", action) => {
+const filterReducer = (state = 'ALL', action) => {
   switch (action.type) {
     case CHANGE_FILTER:
       return action.filter;
