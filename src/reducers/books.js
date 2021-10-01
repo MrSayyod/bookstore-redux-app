@@ -24,7 +24,7 @@ const booksReducer = (state = [], action) => {
       //   state.slice(0, action.index),
       //   state.slice(action.index + 1, state.length),
       // ];
-      return state.filter((item) => item.id !== action.book.id)
+      return state.filter((item) => item.id !== action.book.id);
     default:
       return state;
   }
