@@ -2,17 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionCreateBook } from '../actions/index';
+import { CATEGORIES } from '../components/CategoryFilter';
 
 const BooksForm = ({ createBook }) => {
-  const categories = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
   const [state, setState] = useState({ title: '', category: 'Action' });
   let error = false;
 
@@ -54,8 +46,13 @@ const BooksForm = ({ createBook }) => {
         <div className="category-div">
           <label htmlFor="book-category">
             Category:
-            <select id="book-category" value={state.category} onChange={handleChange} name="category">
-              {categories.map((item) => (
+            <select
+              id="book-category"
+              value={state.category}
+              onChange={handleChange}
+              name="category"
+            >
+              {CATEGORIES.map((item) => (
                 <option key={item} value={item}>
                   {item}
                 </option>
