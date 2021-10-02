@@ -26,6 +26,13 @@ const Book = ({ book, deleteBook }) => (
         <p className="completeText">Completed</p>
       </div>
     </div>
+    <div className="chapterSection">
+      <p className="currentChapter">Current Chapter</p>
+      <p className="chapIntro">Introduction</p>
+      <button type="button" className="progressBtn">
+        <span className="progressText">Update Progress</span>
+      </button>
+    </div>
   </section>
     <tr>
       <td>{book.id}</td>
