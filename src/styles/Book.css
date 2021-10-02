@@ -1,0 +1,11 @@
+.bookSection {
+  display: flex;
+  align-items: center;
+  width: 1025px;
+  height: 170px;
+  margin: 37px 100px 0 100px;
+  padding: 32px 147px 26px 27px;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
