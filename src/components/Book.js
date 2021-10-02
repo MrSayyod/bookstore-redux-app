@@ -15,6 +15,17 @@ const Book = ({ book, deleteBook }) => (
         <span className ="edit">Edit</span>
       </div>
     </div>
+    <div className="progressSection">
+      <div className="completionBar">
+        <div className="completionBar-inner" />
+      </div>
+      <div>
+        <p className="percent">
+          {Math.floor(Math.random()*100)} %
+        </p>
+        <p className="completeText">Completed</p>
+      </div>
+    </div>
   </section>
     <tr>
       <td>{book.id}</td>
