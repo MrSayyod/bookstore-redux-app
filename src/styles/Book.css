@@ -9,3 +9,14 @@
   border: 1px solid #e8e8e8;
   background-color: #fff;
 }
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookControlSection {
+  display: flex;
+  margin-top: 21px;
+}
+
