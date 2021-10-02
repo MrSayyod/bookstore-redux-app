@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Book.css'
 
 const Book = ({ book, deleteBook }) => (
   <>
+  <section className="bookSection">
+    <div className="bookDetails">
+      <p className="bookCategory">{book.category}</p>
+      <p className="bookTitle">{book.title}</p>
+      <p className="bookAuthor">Suzanne Collins</p>
+      
+    </div>
+  </section>
     <tr>
       <td>{book.id}</td>
       <td>{book.title}</td>
