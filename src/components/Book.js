@@ -9,7 +9,11 @@ const Book = ({ book, deleteBook }) => (
       <p className="bookCategory">{book.category}</p>
       <p className="bookTitle">{book.title}</p>
       <p className="bookAuthor">Suzanne Collins</p>
-      
+      <div className="bookControlSection">
+        <span className="comments">Comments</span>
+        <button type="button" className="remove" onClick={deleteBook}>Remove</button>
+        <span className ="edit">Edit</span>
+      </div>
     </div>
   </section>
     <tr>
