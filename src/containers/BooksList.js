@@ -1,19 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Book from "../components/Book";
-import { actionRemoveBook, actionChangeFilter } from "../actions/index";
-import { CategoryFilter } from "../components/CategoryFilter";
-import "../styles/BooksList.css";
-import profileImg from "../images/user.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Book from '../components/Book';
+import { actionRemoveBook, actionChangeFilter } from '../actions/index';
+import { CategoryFilter } from '../components/CategoryFilter';
+import '../styles/BooksList.css';
+import profileImg from '../images/user.png';
 
-const BooksList = ({ books, removeBook, filter, changeFilter }) => {
+const BooksList = ({
+  books, removeBook, filter, changeFilter,
+}) => {
   const handleRemoveBook = (book) => {
     removeBook(book);
   };
   const handleFilterChange = (event) => changeFilter(event.target.value);
-  const filteredBooks =
-    filter === "ALL" ? books : books.filter((item) => item.category === filter);
+  const filteredBooks = filter === 'ALL' ? books : books.filter((item) => item.category === filter);
   const data = filteredBooks.map((item) => (
     <Book key={item.id} book={item} deleteBook={() => handleRemoveBook(item)} />
   ));
@@ -35,18 +36,6 @@ const BooksList = ({ books, removeBook, filter, changeFilter }) => {
           {data}
         </section>
       </div>
-
-      <table className="books-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>{data}</tbody>
-      </table>
     </>
   );
 };
