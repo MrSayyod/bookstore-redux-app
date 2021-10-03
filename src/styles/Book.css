@@ -89,6 +89,8 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
+  background-color: #fff;
+  border: none;
 }
 
 .edit {
@@ -103,4 +105,44 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
+}
+
+.progressSection {
+  display: flex;
+  border-right: 1px solid #e8e8e8;
+}
+
+.completionBar {
+  border-radius: 50%;
+  width: 4.063rem;
+  height: 4.063rem;
+  display: flex;
+  background-color: #ddd;
+  margin-right: 0.625rem;
+  background-image: linear-gradient(290deg, #307bbe 0 64%, #e8e8e8 64% 100%);
+}
+
+.completionBar-inner {
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: auto;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 30%;
+}
+
+.percent {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
