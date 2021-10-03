@@ -5,6 +5,7 @@ import Book from '../components/Book';
 import { actionRemoveBook, actionChangeFilter } from '../actions/index';
 import { CategoryFilter } from '../components/CategoryFilter';
 import '../styles/BooksList.css'
+import profileImg from '../images/user.png'
 
 const BooksList = ({
   books, removeBook, filter, changeFilter,
