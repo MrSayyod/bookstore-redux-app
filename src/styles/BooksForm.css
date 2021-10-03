@@ -43,3 +43,7 @@
   color: #c4c4c4;
 }
 
+.form {
+  display: flex;
+}
+
