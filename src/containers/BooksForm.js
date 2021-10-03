@@ -34,13 +34,26 @@ const BooksForm = ({ createBook }) => {
       <div className="bookFormSection">
         <div className="addNewBook">Add new book</div>
         <form className="form" onSubmit={handleSubmit}>
-          <input type="text" className="input-title" name="title" onChange={handleChange} value={state.title || ''} placeholder="Book title" />
-          <select className="category" name="category" onChange={handleChange} placeholder="Category" value={state.category}>
-            {
-              CATEGORIES.map((item) => (
-                <option key={item} value={item} className="categoryText">{item}</option>
-              ))
-            }
+          <input
+            type="text"
+            className="input-title"
+            name="title"
+            onChange={handleChange}
+            value={state.title || ''}
+            placeholder="Book title"
+          />
+          <select
+            className="category"
+            name="category"
+            onChange={handleChange}
+            placeholder="Category"
+            value={state.category}
+          >
+            {CATEGORIES.map((item) => (
+              <option key={item} value={item} className="categoryText">
+                {item}
+              </option>
+            ))}
           </select>
           <button className="addBookBTN" type="submit">
             <span className="addBookText">Add book</span>
