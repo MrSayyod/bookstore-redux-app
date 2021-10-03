@@ -57,3 +57,21 @@
   letter-spacing: 1.9px;
   color: #121212;
 }
+
+.logoSec {
+  width: 2.813rem;
+  height: 2.813rem;
+  margin: 0 0 0 41.5rem;
+  padding: 0.875rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.logo_1 {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
