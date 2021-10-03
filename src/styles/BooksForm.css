@@ -47,3 +47,29 @@
   display: flex;
 }
 
+.category {
+  width: 17.813rem;
+  height: 2.813rem;
+  margin: 1.188rem 2.125rem 0;
+  padding: 0.375rem 0.938rem 0.563rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.categoryText {
+  width: 4.5rem;
+  height: 1.188rem;
+  margin: 0.438rem 10.438rem 0.25rem 0;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}
+
+
+
