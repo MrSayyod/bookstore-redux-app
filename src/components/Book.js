@@ -23,6 +23,7 @@ const Book = ({ book, deleteBook }) => (
           <p className="percent">
             {Math.floor(Math.random() * 100)}
             {' '}
+            {' '}
             %
           </p>
           <p className="completeText">Completed</p>
