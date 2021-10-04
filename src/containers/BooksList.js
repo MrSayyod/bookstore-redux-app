@@ -22,7 +22,7 @@ const BooksList = ({
     <>
       <div className="books-section">
         <div className="navBar">
-          <h1 id="main-logo">Bookstore CMS</h1>
+          <span id="main-logo">Bookstore CMS</span>
           <p className="books">BOOKS</p>
           <CategoryFilter
             handleFilterChange={handleFilterChange}

@@ -11,9 +11,9 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-const CategoryFilter = ({ handleFilterChange }) => (
-  <select name="category" onChange={handleFilterChange}>
-    <option value="ALL">ALL</option>
+const CategoryFilter = ({ handleFilterChange, className }) => (
+  <select name="category" className={className} onChange={handleFilterChange}>
+    <option value="ALL">CATEGORIES</option>
     {CATEGORIES.map((item) => (
       <option key={item} value={item}>
         {item}
@@ -24,6 +24,7 @@ const CategoryFilter = ({ handleFilterChange }) => (
 
 CategoryFilter.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export { CATEGORIES, CategoryFilter };
