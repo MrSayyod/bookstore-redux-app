@@ -60,41 +60,6 @@ const BooksForm = ({ createBook }) => {
           </button>
         </form>
       </div>
-
-      {/* <form className="form" onSubmit={handleSubmit}>
-        <h3>Add book</h3>
-        <div className="title-div">
-          <label htmlFor="book-title">
-            Title:
-            <input
-              type="text"
-              id="book-title"
-              name="title"
-              onChange={handleChange}
-              value={state.title || ""}
-            />
-          </label>
-        </div>
-        <div className="category-div">
-          <label htmlFor="book-category">
-            Category:
-            <select
-              id="book-category"
-              value={state.category}
-              onChange={handleChange}
-              name="category"
-            >
-              {CATEGORIES.map((item) => (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <button type="submit">Submit</button>
-        <h5>{error ? "Enter required fields" : ""}</h5>
-      </form> */}
     </>
   );
 };
