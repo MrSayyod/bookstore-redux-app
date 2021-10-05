@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { actionRemoveBook, actionChangeFilter } from '../actions/index';
 import { CategoryFilter } from '../components/CategoryFilter';
+import '../styles/BooksList.css';
+import profileImg from '../images/user.png';
 
 const BooksList = ({
   books, removeBook, filter, changeFilter,
@@ -14,26 +16,26 @@ const BooksList = ({
   const handleFilterChange = (event) => changeFilter(event.target.value);
   const filteredBooks = filter === 'ALL' ? books : books.filter((item) => item.category === filter);
   const data = filteredBooks.map((item) => (
-    <Book
-      key={item.id}
-      book={item}
-      deleteBook={() => handleRemoveBook(item)}
-    />
+    <Book key={item.id} book={item} deleteBook={() => handleRemoveBook(item)} />
   ));
   return (
     <>
-      <CategoryFilter handleFilterChange={handleFilterChange} />
-      <table className="books-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>{data}</tbody>
-      </table>
+      <div className="books-section">
+        <div className="navBar">
+          <span id="main-logo">Bookstore CMS</span>
+          <p className="books">BOOKS</p>
+          <CategoryFilter
+            handleFilterChange={handleFilterChange}
+            className="categoryDropdown"
+          />
+          <div className="logoSec">
+            <img src={profileImg} alt="logo" className="logo_1" />
+          </div>
+        </div>
+        <section className="books-table">
+          {data}
+        </section>
+      </div>
     </>
   );
 };
